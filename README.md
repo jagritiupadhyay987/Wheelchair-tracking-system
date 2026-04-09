@@ -3,10 +3,15 @@ AIIMS Delhi serves over 10,000 patients daily across a sprawling campus with 2,5
 
 The Core Problems
 •	Patients and attendants spend 15–30 minutes searching for a wheelchair at OPD — often physically unfit to walk that far.
+
 •	Staff have no visibility into wheelchair locations — they rely on memory and word of mouth.
+
 •	Wheelchairs pile up in high-traffic zones (OPD) while critical zones (Trauma, ICU) run empty.
+
 •	No tracking of damaged or missing wheelchairs — 30% of the fleet is unavailable on any given day.
+
 •	No cleaning workflow — returned wheelchairs sit unclean in corridors.
+
 •	Zero data for management — no utilization reports, no procurement planning, no audit trail.
 
   Impact: A post-surgery elderly patient alone at OPD Gate 3 cannot find a wheelchair. 8 wheelchairs sit idle in Ward B 200 metres away. Nobody knows.  
@@ -52,22 +57,4 @@ WheelTrack uses four distinct AI layers, each with a clear input, model, and out
 •	Output: "WC-047 stationary in Stairwell B for 4.2 hours — possible abandonment." and "WC-023, WC-107 flagged for preventive maintenance this week."
 •	Condemned trigger: Admin marks wheelchair condemned — system auto-generates procurement request with fleet gap analysis.
 
-wheeltrack-aiims/
-├── backend/
-│   ├── main.py              # FastAPI app + WebSocket server
-│   ├── models.py            # SQLite schema + lifecycle states
-│   ├── ai/
-│   │   ├── demand_forecast.py   # Prophet model
-│   │   ├── heatmap.py           # QR scan velocity detection
-│   │   ├── priority.py          # Vulnerability scoring
-│   │   └── maintenance.py       # Predictive maintenance + anomaly
-│   └── simulator.py         # BLE wheelchair movement simulator
-├── frontend/
-│   ├── patient/             # QR scan mobile view (Hindi/English)
-│   ├── staff/               # Desktop dashboard + floor map SVG
-│   ├── housekeeping/        # Mobile cleaning queue
-│   └── admin/               # Fleet health + audit trail
-├── data/
-│   └── aiims_layout.json    # Campus zone + QR point definitions
-├── requirements.txt
-└── README.md
+
